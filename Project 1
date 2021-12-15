@@ -6,8 +6,8 @@ public class Tax {
        //Create a Scanner
        Scanner input =new Scanner(System.in);
        // Prompt the user to enter filing status 
-       System.out.print("(0-single filer, 1-married jointly)\n" 
-            + "Enter the filing status: ");
+       System.out.print("(0-single filer, 1-married jointly or " + 
+           "qualified Widow(er))\n" + "Enter the filing status: ");
        int status =input.nextInt();
 
       // Prompt the user to enter taxable revenue
@@ -38,7 +38,8 @@ public class Tax {
              (revenue - 171550) * 0.33 + (revenue - 372950) * 0.35; 
              
       }
-      else if (status == 1) { // Compute tax for married file jointly 
+      else if (status == 1) {
+      // Compute tax for married file jointly or qualified Widow(er)
         if (revenue <= 16700) 
           tax= revenue * 0.10;
         else if (revenue <= 67900)
